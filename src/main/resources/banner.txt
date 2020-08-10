@@ -7,7 +7,8 @@
    \ \__\    \ \__\ \_______\ \_______\ \_______\ \_______\
     \|__|     \|__|\|_______|\|_______|\|_______|\|_______|
 ------------------------------------------------------------
-Spring Boot   :     ${spring-boot.version}
-mblog         :     ${site.version}
-mblog storage :     ${site.location}
+ :: Spring Boot   :     ${spring-boot.version} ::
+ :: mblog         :     ${site.version} ::
+ :: mblog storage :     ${site.location} ::
+ :: http://localhost:${server.port} ::
 ------------------------------------------------------------
