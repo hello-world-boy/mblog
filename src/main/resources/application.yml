@@ -62,10 +62,12 @@ shiro:
 
 logging:
     config: classpath:logback-spring.xml
+    file:
+        path: /web/tomcat/logs/mblog
 
 # site.options.theme: [default|classic]
 site:
-    version: 3.5.0
+    version: 3.5.1.beta
     location: ${user.dir}
     controls:
         # 注册开关
