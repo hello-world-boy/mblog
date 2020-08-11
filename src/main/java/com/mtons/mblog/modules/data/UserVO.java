@@ -9,132 +9,132 @@ import java.util.Date;
 import java.util.List;
 
 public class UserVO implements Serializable {
-	private static final long serialVersionUID = 107193816173103116L;
+    private static final long serialVersionUID = 107193816173103116L;
 
-	private long id;
-	private String username;
+    private long id;
+    private String username;
 
-	@JSONField(serialize = false)
-	private String password;
-	private String avatar;
-	private String name;
-	
-	@JSONField(serialize = false)
-	private String email;
+    @JSONField(serialize = false)
+    private String password;
+    private String avatar;
+    private String name;
 
-	private int posts; // 文章数
-	private int comments; // 发布评论数
+    @JSONField(serialize = false)
+    private String email;
 
-	private Date created;
-	private Date lastLogin;
-	private String signature; // 个性签名
+    private int posts; // 文章数
+    private int comments; // 发布评论数
 
-	private int status;
+    private Date created;
+    private Date lastLogin;
+    private String signature; // 个性签名
 
-	@JSONField(serialize = false)
-	private List<Role> roles = new ArrayList<>();
+    private int status;
 
-	public long getId() {
-		return id;
-	}
+    @JSONField(serialize = false)
+    private List<Role> roles = new ArrayList<>();
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public String getUsername() {
-		return username;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    public String getUsername() {
+        return username;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public Date getCreated() {
-		return created;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setCreated(Date created) {
-		this.created = created;
-	}
+    public Date getCreated() {
+        return created;
+    }
 
-	public Date getLastLogin() {
-		return lastLogin;
-	}
+    public void setCreated(Date created) {
+        this.created = created;
+    }
 
-	public void setLastLogin(Date lastLogin) {
-		this.lastLogin = lastLogin;
-	}
+    public Date getLastLogin() {
+        return lastLogin;
+    }
 
-	public int getStatus() {
-		return status;
-	}
+    public void setLastLogin(Date lastLogin) {
+        this.lastLogin = lastLogin;
+    }
 
-	public void setStatus(int status) {
-		this.status = status;
-	}
+    public int getStatus() {
+        return status;
+    }
 
-	public String getAvatar() {
-		return avatar;
-	}
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
-	public void setAvatar(String avatar) {
-		this.avatar = avatar;
-	}
+    public String getAvatar() {
+        return avatar;
+    }
 
-	public int getPosts() {
-		return posts;
-	}
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
 
-	public void setPosts(int posts) {
-		this.posts = posts;
-	}
+    public int getPosts() {
+        return posts;
+    }
 
-	public int getComments() {
-		return comments;
-	}
+    public void setPosts(int posts) {
+        this.posts = posts;
+    }
 
-	public void setComments(int comments) {
-		this.comments = comments;
-	}
+    public int getComments() {
+        return comments;
+    }
 
-	public String getSignature() {
-		return signature;
-	}
+    public void setComments(int comments) {
+        this.comments = comments;
+    }
 
-	public void setSignature(String signature) {
-		this.signature = signature;
-	}
+    public String getSignature() {
+        return signature;
+    }
 
-	public List<Role> getRoles() {
-		return roles;
-	}
+    public void setSignature(String signature) {
+        this.signature = signature;
+    }
 
-	public void setRoles(List<Role> roles) {
-		this.roles = roles;
-	}
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
 }

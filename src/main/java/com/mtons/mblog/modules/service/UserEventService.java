@@ -11,6 +11,7 @@ import java.util.Set;
 public interface UserEventService {
     /**
      * 自增发布文章数
+     *
      * @param userId
      */
     @CacheEvict(value = {Consts.CACHE_USER, Consts.CACHE_POST}, allEntries = true)
@@ -18,6 +19,7 @@ public interface UserEventService {
 
     /**
      * 自增评论数
+     *
      * @param userId
      */
     @CacheEvict(value = {Consts.CACHE_USER, Consts.CACHE_POST}, allEntries = true)
@@ -25,6 +27,7 @@ public interface UserEventService {
 
     /**
      * 批量自动评论数
+     *
      * @param userIds
      * @param plus
      */

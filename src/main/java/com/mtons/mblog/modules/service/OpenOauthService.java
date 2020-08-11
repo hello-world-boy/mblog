@@ -11,7 +11,7 @@ public interface OpenOauthService {
     UserVO getUserByOauthToken(String oauth_token);
 
     OpenOauthVO getOauthByToken(String oauth_token);
-    
+
     OpenOauthVO getOauthByOauthUserId(String oauthUserId);
 
     OpenOauthVO getOauthByUid(long userId);

@@ -13,16 +13,16 @@ import java.io.ByteArrayInputStream;
 
 /**
  * @author langhsu
- * @since  3.0
+ * @since 3.0
  */
 @Slf4j
 @Component
 public class AliyunStorageImpl extends AbstractStorage implements Storage {
     private static final String oss_endpoint = "aliyun_oss_endpoint";
-    private static final String oss_bucket   = "aliyun_oss_bucket";
-    private static final String oss_key      = "aliyun_oss_key";
-    private static final String oss_secret   = "aliyun_oss_secret";
-    private static final String oss_src      = "aliyun_oss_src";
+    private static final String oss_bucket = "aliyun_oss_bucket";
+    private static final String oss_key = "aliyun_oss_key";
+    private static final String oss_secret = "aliyun_oss_secret";
+    private static final String oss_src = "aliyun_oss_src";
 
     @Override
     public String writeToStore(byte[] bytes, String pathAndFileName) throws Exception {

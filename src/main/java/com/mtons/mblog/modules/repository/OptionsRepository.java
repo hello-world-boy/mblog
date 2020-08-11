@@ -8,5 +8,5 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  * @author langhsu
  */
 public interface OptionsRepository extends JpaRepository<Options, Long>, JpaSpecificationExecutor<Options> {
-	Options findByKey(String key);
+    Options findByKey(String key);
 }

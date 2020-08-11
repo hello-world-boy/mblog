@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 资源路径处理
+ *
  * @author langhsu
  */
 @Component

@@ -18,6 +18,7 @@ import java.util.Optional;
 
 /**
  * 第三方登录授权管理
+ *
  * @author langhsu on 2015/8/12.
  */
 @Service
@@ -79,15 +80,15 @@ public class OpenOauthServiceImpl implements OpenOauthService {
         userOauthRepository.save(po);
     }
 
-	@Override
-	public OpenOauthVO getOauthByOauthUserId(String oauthUserId) {
-		UserOauth po = userOauthRepository.findByOauthUserId(oauthUserId);
+    @Override
+    public OpenOauthVO getOauthByOauthUserId(String oauthUserId) {
+        UserOauth po = userOauthRepository.findByOauthUserId(oauthUserId);
         OpenOauthVO vo = null;
         if (po != null) {
             vo = new OpenOauthVO();
             BeanUtils.copyProperties(po, vo);
         }
         return vo;
-	}
+    }
 
 }

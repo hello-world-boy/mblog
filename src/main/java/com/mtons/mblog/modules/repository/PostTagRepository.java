@@ -16,6 +16,7 @@ import java.util.Set;
 @Repository
 public interface PostTagRepository extends JpaRepository<PostTag, Long>, JpaSpecificationExecutor<PostTag> {
     Page<PostTag> findAllByTagId(Pageable pageable, long tagId);
+
     PostTag findByPostIdAndTagId(long postId, long tagId);
 
     @Query("select tagId from PostTag where postId = ?1")

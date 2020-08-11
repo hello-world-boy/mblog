@@ -17,16 +17,16 @@ import org.springframework.stereotype.Component;
 
 /**
  * @author langhsu
- * @since  3.0
+ * @since 3.0
  */
 @Slf4j
 @Component
 public class QiniuStorageImpl extends AbstractStorage implements Storage {
     private static final String oss_bucket = "qiniu_oss_bucket";
     private static final String oss_domain = "qiniu_oss_domain";
-    private static final String oss_key    = "qiniu_oss_key";
+    private static final String oss_key = "qiniu_oss_key";
     private static final String oss_secret = "qiniu_oss_secret";
-    private static final String oss_src    = "qiniu_oss_src";
+    private static final String oss_src = "qiniu_oss_src";
 
     @Override
     public String writeToStore(byte[] bytes, String pathAndFileName) throws Exception {

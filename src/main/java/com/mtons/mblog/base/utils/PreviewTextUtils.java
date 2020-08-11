@@ -16,6 +16,7 @@ import java.util.List;
 public class PreviewTextUtils {
     /**
      * 提取纯文本
+     *
      * @param html 代码
      * @return string
      */
@@ -27,11 +28,12 @@ public class PreviewTextUtils {
 
     /**
      * 提取纯文本
-     * @param html 代码
+     *
+     * @param html   代码
      * @param length 提取文本长度
      * @return string
      */
-    public static String getText(String html, int length){
+    public static String getText(String html, int length) {
         String text = getText(html);
         text = StringUtils.abbreviate(text, length);
         return text;
@@ -39,6 +41,7 @@ public class PreviewTextUtils {
 
     /**
      * 以下标签可以通过 (b, em, i, strong, u. 纯文本)
+     *
      * @param html 代码
      * @return string
      */
@@ -56,6 +59,7 @@ public class PreviewTextUtils {
 
     /**
      * 获取文章中的img url
+     *
      * @param html 代码
      * @return string
      */
@@ -66,7 +70,7 @@ public class PreviewTextUtils {
         Document doc = Jsoup.parseBodyFragment(html);
         Elements images = doc.select("img");
         if (null != images) {
-            for(Element el : images) {
+            for (Element el : images) {
                 urls.add(el.attr("src"));
             }
         }

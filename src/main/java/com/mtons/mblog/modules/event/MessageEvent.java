@@ -6,12 +6,12 @@ import org.springframework.context.ApplicationEvent;
  * @author langhsu on 2015/8/31.
  */
 public class MessageEvent extends ApplicationEvent {
-	private static final long serialVersionUID = -4261382494171476390L;
+    private static final long serialVersionUID = -4261382494171476390L;
 
     /**
      * 消息生产者Id
      */
-	private long fromUserId;
+    private long fromUserId;
 
     /**
      * 消息消费者Id

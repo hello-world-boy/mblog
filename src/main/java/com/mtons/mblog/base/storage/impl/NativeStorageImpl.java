@@ -8,32 +8,32 @@ import java.io.File;
 
 /**
  * @author langhsu
- * @since  3.0
+ * @since 3.0
  */
 @Slf4j
 @Component
 public class NativeStorageImpl extends AbstractStorage {
 
-	@Override
-	public void deleteFile(String storePath) {
-		File file = new File(getStoragePath() + storePath);
+    @Override
+    public void deleteFile(String storePath) {
+        File file = new File(getStoragePath() + storePath);
 
-		// 文件存在, 且不是目录
-		if (file.exists() && !file.isDirectory()) {
-			file.delete();
-			log.info("fileRepo delete " + storePath);
-		}
-	}
+        // 文件存在, 且不是目录
+        if (file.exists() && !file.isDirectory()) {
+            file.delete();
+            log.info("fileRepo delete " + storePath);
+        }
+    }
 
-	@Override
-	public String writeToStore(byte[] bytes, String pathAndFileName) throws Exception {
-		String dest = getStoragePath() + pathAndFileName;
-		FileKit.writeByteArrayToFile(bytes, dest);
-		return pathAndFileName;
-	}
+    @Override
+    public String writeToStore(byte[] bytes, String pathAndFileName) throws Exception {
+        String dest = getStoragePath() + pathAndFileName;
+        FileKit.writeByteArrayToFile(bytes, dest);
+        return pathAndFileName;
+    }
 
-	private String getStoragePath() {
-		return options.getLocation();
-	}
+    private String getStoragePath() {
+        return options.getLocation();
+    }
 
 }

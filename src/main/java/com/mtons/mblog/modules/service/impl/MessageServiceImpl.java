@@ -79,7 +79,7 @@ public class MessageServiceImpl implements MessageService {
     @Override
     @Transactional
     public void send(MessageVO message) {
-        if (message == null || message.getUserId() <=0 || message.getFromId() <= 0) {
+        if (message == null || message.getUserId() <= 0 || message.getFromId() <= 0) {
             return;
         }
 

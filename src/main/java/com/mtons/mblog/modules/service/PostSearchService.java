@@ -12,8 +12,9 @@ import org.springframework.data.domain.Pageable;
 public interface PostSearchService {
     /**
      * 根据关键字搜索
+     *
      * @param pageable 分页
-     * @param term 关键字
+     * @param term     关键字
      * @throws Exception
      */
     Page<PostVO> search(Pageable pageable, String term) throws Exception;

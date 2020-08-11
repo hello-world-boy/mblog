@@ -6,6 +6,7 @@ import java.io.Serializable;
 
 /**
  * 消息对象
+ *
  * @author langhsu
  */
 @Data

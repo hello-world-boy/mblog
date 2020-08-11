@@ -21,7 +21,7 @@ import static org.apache.commons.lang3.StringUtils.trimToEmpty;
 
 /**
  * Freemarker 模型工具类
- *
+ * <p>
  * Created by langhsu on 2017/11/14.
  */
 public class TemplateModelUtils {
@@ -133,7 +133,7 @@ public class TemplateModelUtils {
         } else {
             String str = converString(model);
             if (isNotBlank(str)) {
-                return split(str,',');
+                return split(str, ',');
             }
         }
         return null;

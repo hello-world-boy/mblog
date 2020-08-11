@@ -1,8 +1,21 @@
 package com.mtons.mblog.base.utils;
 
 import com.mtons.mblog.base.lang.Consts;
-import com.mtons.mblog.modules.data.*;
-import com.mtons.mblog.modules.entity.*;
+import com.mtons.mblog.modules.data.AccountProfile;
+import com.mtons.mblog.modules.data.CommentVO;
+import com.mtons.mblog.modules.data.FavoriteVO;
+import com.mtons.mblog.modules.data.MessageVO;
+import com.mtons.mblog.modules.data.PostTagVO;
+import com.mtons.mblog.modules.data.PostVO;
+import com.mtons.mblog.modules.data.TagVO;
+import com.mtons.mblog.modules.data.UserVO;
+import com.mtons.mblog.modules.entity.Comment;
+import com.mtons.mblog.modules.entity.Favorite;
+import com.mtons.mblog.modules.entity.Message;
+import com.mtons.mblog.modules.entity.Post;
+import com.mtons.mblog.modules.entity.PostTag;
+import com.mtons.mblog.modules.entity.Tag;
+import com.mtons.mblog.modules.entity.User;
 import org.springframework.beans.BeanUtils;
 
 /**

@@ -5,7 +5,6 @@ import java.util.Date;
 
 /**
  * @author langhsu
- *
  */
 public class AccountProfile implements Serializable {
     private static final long serialVersionUID = 1748764917028425871L;

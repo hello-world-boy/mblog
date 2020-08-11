@@ -44,7 +44,7 @@ public class SecurityCodeServiceImpl implements SecurityCodeService {
             po.setTarget(target);
         } else {
 
-            long interval = ( now.getTime() - po.getCreated().getTime() ) / 1000;
+            long interval = (now.getTime() - po.getCreated().getTime()) / 1000;
 
             if (interval <= 60) {
                 throw new MtonsException("发送间隔时间不能少于1分钟");

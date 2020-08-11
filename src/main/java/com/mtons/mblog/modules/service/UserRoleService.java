@@ -12,6 +12,7 @@ import java.util.Set;
 public interface UserRoleService {
     /**
      * 查询用户已有的角色Id
+     *
      * @param userId 用户ID
      * @return
      */
@@ -19,6 +20,7 @@ public interface UserRoleService {
 
     /**
      * 查询用户已有的角色 和 权限
+     *
      * @param userId 用户ID
      * @return
      */
@@ -28,7 +30,8 @@ public interface UserRoleService {
 
     /**
      * 修改用户角色
-     * @param userId 用户ID
+     *
+     * @param userId  用户ID
      * @param roleIds 要授权的角色ID
      */
     void updateRole(long userId, Set<Long> roleIds);

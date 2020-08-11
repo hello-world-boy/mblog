@@ -28,7 +28,7 @@ public class ChannelController extends BaseController {
     private ContextStartup contextStartup;
 
     @RequestMapping("/list")
-//	@RequiresPermissions("channel:list")
+    // @RequiresPermissions("channel:list")
     public String list(ModelMap model) {
         model.put("list", channelService.findAll(Consts.IGNORE));
         return "/admin/channel/list";

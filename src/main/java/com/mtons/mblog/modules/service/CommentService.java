@@ -13,37 +13,39 @@ import java.util.Set;
  * @author langhsu
  */
 public interface CommentService {
-	Page<CommentVO> paging4Admin(Pageable pageable);
+    Page<CommentVO> paging4Admin(Pageable pageable);
 
-	Page<CommentVO> pagingByAuthorId(Pageable pageable, long authorId);
+    Page<CommentVO> pagingByAuthorId(Pageable pageable, long authorId);
 
-	/**
-	 * 查询评论列表
-	 * @param pageable
-	 * @param postId
-	 */
-	Page<CommentVO> pagingByPostId(Pageable pageable, long postId);
+    /**
+     * 查询评论列表
+     *
+     * @param pageable
+     * @param postId
+     */
+    Page<CommentVO> pagingByPostId(Pageable pageable, long postId);
 
-	List<CommentVO> findLatestComments(int maxResults);
+    List<CommentVO> findLatestComments(int maxResults);
 
-	Map<Long, CommentVO> findByIds(Set<Long> ids);
+    Map<Long, CommentVO> findByIds(Set<Long> ids);
 
-	Comment findById(long id);
-	
-	/**
-	 * 发表评论
-	 * @param comment
-	 * @return
-	 */
-	long post(CommentVO comment);
-	
-	void delete(List<Long> ids);
+    Comment findById(long id);
 
-	void delete(long id, long authorId);
+    /**
+     * 发表评论
+     *
+     * @param comment
+     * @return
+     */
+    long post(CommentVO comment);
 
-	void deleteByPostId(long postId);
+    void delete(List<Long> ids);
 
-	long count();
+    void delete(long id, long authorId);
 
-	long countByAuthorIdAndPostId(long authorId, long postId);
+    void deleteByPostId(long postId);
+
+    long count();
+
+    long countByAuthorIdAndPostId(long authorId, long postId);
 }

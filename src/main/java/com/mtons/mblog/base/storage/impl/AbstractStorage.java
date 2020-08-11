@@ -2,7 +2,10 @@ package com.mtons.mblog.base.storage.impl;
 
 import com.mtons.mblog.base.lang.MtonsException;
 import com.mtons.mblog.base.storage.Storage;
-import com.mtons.mblog.base.utils.*;
+import com.mtons.mblog.base.utils.FileKit;
+import com.mtons.mblog.base.utils.FilePathUtils;
+import com.mtons.mblog.base.utils.ImageUtils;
+import com.mtons.mblog.base.utils.MD5;
 import com.mtons.mblog.config.SiteOptions;
 import com.mtons.mblog.modules.entity.Resource;
 import com.mtons.mblog.modules.repository.ResourceRepository;
@@ -56,7 +59,7 @@ public abstract class AbstractStorage implements Storage {
     public String writeToStore(byte[] bytes, String src, String originalFilename) throws Exception {
         String md5 = MD5.md5File(bytes);
         Resource resource = resourceRepository.findByMd5(md5);
-        if (resource != null){
+        if (resource != null) {
             return resource.getPath();
         }
         String path = FilePathUtils.wholePathName(src, originalFilename, md5);

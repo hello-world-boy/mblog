@@ -73,7 +73,7 @@ public class CommentComplementor {
     }
 
     public Map<Long, CommentVO> toMap() {
-        return comments.stream().collect(Collectors.toMap(CommentVO::getId, n-> n));
+        return comments.stream().collect(Collectors.toMap(CommentVO::getId, n -> n));
     }
 
 }

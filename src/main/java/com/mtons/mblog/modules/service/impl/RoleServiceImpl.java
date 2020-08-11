@@ -82,7 +82,7 @@ public class RoleServiceImpl implements RoleService {
     public void update(Role r, Set<Permission> permissions) {
         Optional<Role> optional = roleRepository.findById(r.getId());
         Role po = optional.orElse(new Role());
-            po.setName(r.getName());
+        po.setName(r.getName());
         po.setDescription(r.getDescription());
         po.setStatus(r.getStatus());
 

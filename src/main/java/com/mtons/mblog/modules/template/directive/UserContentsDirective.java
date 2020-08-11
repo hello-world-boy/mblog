@@ -13,17 +13,16 @@ import org.springframework.stereotype.Component;
  * 根据作者取文章列表
  *
  * @author langhsu
- *
  */
 @Component
 public class UserContentsDirective extends TemplateDirective {
     @Autowired
-	private PostService postService;
+    private PostService postService;
 
-	@Override
-	public String getName() {
-		return "user_contents";
-	}
+    @Override
+    public String getName() {
+        return "user_contents";
+    }
 
     @Override
     public void execute(DirectiveHandler handler) throws Exception {

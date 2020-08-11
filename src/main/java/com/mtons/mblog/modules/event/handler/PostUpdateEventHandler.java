@@ -1,7 +1,11 @@
 package com.mtons.mblog.modules.event.handler;
 
 import com.mtons.mblog.modules.event.PostUpdateEvent;
-import com.mtons.mblog.modules.service.*;
+import com.mtons.mblog.modules.service.CommentService;
+import com.mtons.mblog.modules.service.FavoriteService;
+import com.mtons.mblog.modules.service.MessageService;
+import com.mtons.mblog.modules.service.TagService;
+import com.mtons.mblog.modules.service.UserEventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.scheduling.annotation.Async;

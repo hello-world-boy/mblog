@@ -22,51 +22,51 @@ import java.util.Map;
  */
 @Service
 public class OptionsServiceImpl implements OptionsService {
-	@Autowired
-	private OptionsRepository optionsRepository;
-	@Autowired
-	private EntityManager entityManager;
+    @Autowired
+    private OptionsRepository optionsRepository;
+    @Autowired
+    private EntityManager entityManager;
 
-	@Override
-	@Transactional(readOnly = true)
-	public List<Options> findAll() {
-		List<Options> list = optionsRepository.findAll();
-		List<Options> rets = new ArrayList<>();
-		
-		for (Options po : list) {
-			Options r = new Options();
-			BeanUtils.copyProperties(po, r);
-			rets.add(r);
-		}
-		return rets;
-	}
+    @Override
+    @Transactional(readOnly = true)
+    public List<Options> findAll() {
+        List<Options> list = optionsRepository.findAll();
+        List<Options> rets = new ArrayList<>();
 
-	@Override
-	@Transactional
-	public void update(Map<String, String> options) {
-		if (options == null) {
-			return;
-		}
+        for (Options po : list) {
+            Options r = new Options();
+            BeanUtils.copyProperties(po, r);
+            rets.add(r);
+        }
+        return rets;
+    }
 
-		options.forEach((key, value) -> {
-			Options entity = optionsRepository.findByKey(key);
-			String val = StringUtils.trim(value);
-			if (entity != null) {
-				entity.setValue(val);
-			} else {
-				entity = new Options();
-				entity.setKey(key);
-				entity.setValue(val);
-			}
-			optionsRepository.save(entity);
-		});
-	}
+    @Override
+    @Transactional
+    public void update(Map<String, String> options) {
+        if (options == null) {
+            return;
+        }
 
-	@Override
-	@Transactional
-	public void initSettings(Resource resource) {
-		Session session = entityManager.unwrap(Session.class);
-		session.doWork(connection -> ScriptUtils.executeSqlScript(connection, resource));
-	}
+        options.forEach((key, value) -> {
+            Options entity = optionsRepository.findByKey(key);
+            String val = StringUtils.trim(value);
+            if (entity != null) {
+                entity.setValue(val);
+            } else {
+                entity = new Options();
+                entity.setKey(key);
+                entity.setValue(val);
+            }
+            optionsRepository.save(entity);
+        });
+    }
+
+    @Override
+    @Transactional
+    public void initSettings(Resource resource) {
+        Session session = entityManager.unwrap(Session.class);
+        session.doWork(connection -> ScriptUtils.executeSqlScript(connection, resource));
+    }
 
 }

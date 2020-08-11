@@ -2,7 +2,13 @@ package com.mtons.mblog.modules.entity;
 
 import org.hibernate.annotations.Type;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 /**
@@ -11,20 +17,20 @@ import java.io.Serializable;
 @Entity
 @Table(name = "mto_post_attribute")
 public class PostAttribute implements Serializable {
-	private static final long serialVersionUID = 7829351358884064647L;
+    private static final long serialVersionUID = 7829351358884064647L;
 
-	@Id
+    @Id
     private long id;
 
-	@Column(length = 16, columnDefinition = "varchar(16) default 'tinymce'")
-	private String editor;
+    @Column(length = 16, columnDefinition = "varchar(16) default 'tinymce'")
+    private String editor;
 
     /**
      * 内容
      */
     @Lob
     @Basic(fetch = FetchType.LAZY)
-    @Type(type="text")
+    @Type(type = "text")
     private String content; // 内容
 
     public long getId() {

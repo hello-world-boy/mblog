@@ -18,12 +18,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserFavoritesDirective extends TemplateDirective {
     @Autowired
-	private FavoriteService favoriteService;
+    private FavoriteService favoriteService;
 
-	@Override
-	public String getName() {
-		return "user_favorites";
-	}
+    @Override
+    public String getName() {
+        return "user_favorites";
+    }
 
     @Override
     public void execute(DirectiveHandler handler) throws Exception {

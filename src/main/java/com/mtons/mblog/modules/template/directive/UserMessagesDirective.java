@@ -18,12 +18,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserMessagesDirective extends TemplateDirective {
     @Autowired
-	private MessageService messageService;
+    private MessageService messageService;
 
-	@Override
-	public String getName() {
-		return "user_messages";
-	}
+    @Override
+    public String getName() {
+        return "user_messages";
+    }
 
     @Override
     public void execute(DirectiveHandler handler) throws Exception {

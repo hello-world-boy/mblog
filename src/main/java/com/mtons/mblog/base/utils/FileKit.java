@@ -16,8 +16,8 @@ import java.util.List;
 public class FileKit {
     // 文件允许格式
     private static List<String> allowFiles = Arrays.asList(".gif", ".png", ".jpg", ".jpeg", ".bmp");
-    private final static String PREFIX_VIDEO="video/";
-    private final static String PREFIX_IMAGE="image/";
+    private final static String PREFIX_VIDEO = "video/";
+    private final static String PREFIX_IMAGE = "image/";
 
     /**
      * 文件类型判断

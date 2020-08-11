@@ -28,134 +28,133 @@ import java.util.Set;
 
 /**
  * @author langhsu
- *
  */
 @Service
 @Transactional(readOnly = true)
 public class CommentServiceImpl implements CommentService {
-	@Autowired
-	private CommentRepository commentRepository;
-	@Autowired
-	private UserService userService;
-	@Autowired
-	private UserEventService userEventService;
-	@Autowired
-	private PostService postService;
-	
-	@Override
-	public Page<CommentVO> paging4Admin(Pageable pageable) {
-		Page<Comment> page = commentRepository.findAll(pageable);
-		List<CommentVO> rets = CommentComplementor.of(page.getContent())
-				.flutBuildUser()
-				.getComments();
-		return new PageImpl<>(rets, pageable, page.getTotalElements());
-	}
+    @Autowired
+    private CommentRepository commentRepository;
+    @Autowired
+    private UserService userService;
+    @Autowired
+    private UserEventService userEventService;
+    @Autowired
+    private PostService postService;
 
-	@Override
-	public Page<CommentVO> pagingByAuthorId(Pageable pageable, long authorId) {
-		Page<Comment> page = commentRepository.findAllByAuthorId(pageable, authorId);
+    @Override
+    public Page<CommentVO> paging4Admin(Pageable pageable) {
+        Page<Comment> page = commentRepository.findAll(pageable);
+        List<CommentVO> rets = CommentComplementor.of(page.getContent())
+                .flutBuildUser()
+                .getComments();
+        return new PageImpl<>(rets, pageable, page.getTotalElements());
+    }
 
-		List<CommentVO> rets = CommentComplementor.of(page.getContent())
-				.flutBuildUser()
-				.flutBuildParent()
-				.flutBuildPost()
-				.getComments();
-		return new PageImpl<>(rets, pageable, page.getTotalElements());
-	}
+    @Override
+    public Page<CommentVO> pagingByAuthorId(Pageable pageable, long authorId) {
+        Page<Comment> page = commentRepository.findAllByAuthorId(pageable, authorId);
 
-	@Override
-	public Page<CommentVO> pagingByPostId(Pageable pageable, long postId) {
-		Page<Comment> page = commentRepository.findAllByPostId(pageable, postId);
+        List<CommentVO> rets = CommentComplementor.of(page.getContent())
+                .flutBuildUser()
+                .flutBuildParent()
+                .flutBuildPost()
+                .getComments();
+        return new PageImpl<>(rets, pageable, page.getTotalElements());
+    }
 
-		List<CommentVO> rets = CommentComplementor.of(page.getContent())
-				.flutBuildUser()
-				.flutBuildParent()
-				.getComments();
-		return new PageImpl<>(rets, pageable, page.getTotalElements());
-	}
+    @Override
+    public Page<CommentVO> pagingByPostId(Pageable pageable, long postId) {
+        Page<Comment> page = commentRepository.findAllByPostId(pageable, postId);
 
-	@Override
-	public List<CommentVO> findLatestComments(int maxResults) {
-		Pageable pageable = PageRequest.of(0, maxResults, Sort.by(Sort.Direction.DESC, "id"));
-		Page<Comment> page = commentRepository.findAll(pageable);
-		return CommentComplementor.of(page.getContent())
-				.flutBuildUser()
-				.getComments();
-	}
+        List<CommentVO> rets = CommentComplementor.of(page.getContent())
+                .flutBuildUser()
+                .flutBuildParent()
+                .getComments();
+        return new PageImpl<>(rets, pageable, page.getTotalElements());
+    }
 
-	@Override
-	public Map<Long, CommentVO> findByIds(Set<Long> ids) {
-		List<Comment> list = commentRepository.findAllById(ids);
-		return CommentComplementor.of(list)
-				.flutBuildUser()
-				.toMap();
-	}
+    @Override
+    public List<CommentVO> findLatestComments(int maxResults) {
+        Pageable pageable = PageRequest.of(0, maxResults, Sort.by(Sort.Direction.DESC, "id"));
+        Page<Comment> page = commentRepository.findAll(pageable);
+        return CommentComplementor.of(page.getContent())
+                .flutBuildUser()
+                .getComments();
+    }
 
-	@Override
-	public Comment findById(long id) {
-		return commentRepository.findById(id).orElse(null);
-	}
+    @Override
+    public Map<Long, CommentVO> findByIds(Set<Long> ids) {
+        List<Comment> list = commentRepository.findAllById(ids);
+        return CommentComplementor.of(list)
+                .flutBuildUser()
+                .toMap();
+    }
 
-	@Override
-	@Transactional(rollbackFor = Throwable.class)
-	public long post(CommentVO comment) {
-		Comment po = new Comment();
-		
-		po.setAuthorId(comment.getAuthorId());
-		po.setPostId(comment.getPostId());
-		po.setContent(comment.getContent());
-		po.setCreated(new Date());
-		po.setPid(comment.getPid());
-		commentRepository.save(po);
+    @Override
+    public Comment findById(long id) {
+        return commentRepository.findById(id).orElse(null);
+    }
 
-		userEventService.identityComment(comment.getAuthorId(), true);
-		return po.getId();
-	}
+    @Override
+    @Transactional(rollbackFor = Throwable.class)
+    public long post(CommentVO comment) {
+        Comment po = new Comment();
 
-	@Override
-	@Transactional(rollbackFor = Throwable.class)
-	public void delete(List<Long> ids) {
-		List<Comment> list = commentRepository.removeByIdIn(ids);
-		if (CollectionUtils.isNotEmpty(list)) {
-			list.forEach(po -> {
-				userEventService.identityComment(po.getAuthorId(), false);
-			});
-		}
-	}
+        po.setAuthorId(comment.getAuthorId());
+        po.setPostId(comment.getPostId());
+        po.setContent(comment.getContent());
+        po.setCreated(new Date());
+        po.setPid(comment.getPid());
+        commentRepository.save(po);
 
-	@Override
-	@Transactional(rollbackFor = Throwable.class)
-	public void delete(long id, long authorId) {
-		Optional<Comment> optional = commentRepository.findById(id);
-		if (optional.isPresent()) {
-			Comment po = optional.get();
-			// 判断文章是否属于当前登录用户
-			Assert.isTrue(po.getAuthorId() == authorId, "认证失败");
-			commentRepository.deleteById(id);
+        userEventService.identityComment(comment.getAuthorId(), true);
+        return po.getId();
+    }
 
-			userEventService.identityComment(authorId, false);
-		}
-	}
+    @Override
+    @Transactional(rollbackFor = Throwable.class)
+    public void delete(List<Long> ids) {
+        List<Comment> list = commentRepository.removeByIdIn(ids);
+        if (CollectionUtils.isNotEmpty(list)) {
+            list.forEach(po -> {
+                userEventService.identityComment(po.getAuthorId(), false);
+            });
+        }
+    }
 
-	@Override
-	@Transactional(rollbackFor = Throwable.class)
-	public void deleteByPostId(long postId) {
-		List<Comment> list = commentRepository.removeByPostId(postId);
-		if (CollectionUtils.isNotEmpty(list)) {
-			Set<Long> userIds = new HashSet<>();
-			list.forEach(n -> userIds.add(n.getAuthorId()));
-			userEventService.identityComment(userIds, false);
-		}
-	}
+    @Override
+    @Transactional(rollbackFor = Throwable.class)
+    public void delete(long id, long authorId) {
+        Optional<Comment> optional = commentRepository.findById(id);
+        if (optional.isPresent()) {
+            Comment po = optional.get();
+            // 判断文章是否属于当前登录用户
+            Assert.isTrue(po.getAuthorId() == authorId, "认证失败");
+            commentRepository.deleteById(id);
 
-	@Override
-	public long count() {
-		return commentRepository.count();
-	}
+            userEventService.identityComment(authorId, false);
+        }
+    }
 
-	@Override
-	public long countByAuthorIdAndPostId(long authorId, long toId) {
-		return commentRepository.countByAuthorIdAndPostId(authorId, toId);
-	}
+    @Override
+    @Transactional(rollbackFor = Throwable.class)
+    public void deleteByPostId(long postId) {
+        List<Comment> list = commentRepository.removeByPostId(postId);
+        if (CollectionUtils.isNotEmpty(list)) {
+            Set<Long> userIds = new HashSet<>();
+            list.forEach(n -> userIds.add(n.getAuthorId()));
+            userEventService.identityComment(userIds, false);
+        }
+    }
+
+    @Override
+    public long count() {
+        return commentRepository.count();
+    }
+
+    @Override
+    public long countByAuthorIdAndPostId(long authorId, long toId) {
+        return commentRepository.countByAuthorIdAndPostId(authorId, toId);
+    }
 
 }

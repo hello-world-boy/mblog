@@ -18,11 +18,11 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 public class UpYunStorageImpl extends AbstractStorage implements Storage {
-    private static final String oss_bucket   = "upyun_oss_bucket";
-    private static final String oss_domain   = "upyun_oss_domain";
+    private static final String oss_bucket = "upyun_oss_bucket";
+    private static final String oss_domain = "upyun_oss_domain";
     private static final String oss_operator = "upyun_oss_operator";
     private static final String oss_password = "upyun_oss_password";
-    private static final String oss_src      = "upyun_oss_src";
+    private static final String oss_src = "upyun_oss_src";
 
     @Override
     public String writeToStore(byte[] bytes, String pathAndFileName) throws Exception {

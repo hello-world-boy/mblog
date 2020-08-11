@@ -1,9 +1,16 @@
 package com.mtons.mblog.modules.entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Index;
+import javax.persistence.Table;
 
 /**
  * 文章标签映射表
+ *
  * @author : langhsu
  */
 @Entity

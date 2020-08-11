@@ -19,8 +19,8 @@ public class PermissionTree extends Permission {
         this.items = items;
     }
 
-    public void addItem(PermissionTree item){
-        if(this.items == null){
+    public void addItem(PermissionTree item) {
+        if (this.items == null) {
             this.items = new LinkedList<>();
         }
         this.items.add(item);

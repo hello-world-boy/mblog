@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.validation.constraints.NotNull;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -83,7 +82,7 @@ public class SiteOptions {
         @NotNull String value = getValue(key);
         String[] array = value.split(separator);
         Integer[] ret = new Integer[array.length];
-        for (int i = 0; i < array.length; i ++) {
+        for (int i = 0; i < array.length; i++) {
             ret[i] = Integer.parseInt(array[i]);
         }
         return ret;

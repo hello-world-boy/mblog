@@ -22,7 +22,7 @@ public interface ResourceRepository extends JpaRepository<Resource, Long>, JpaSp
     List<Resource> findByMd5In(List<String> md5);
 
     @Query(value = "SELECT * FROM mto_resource WHERE amount <= 0 AND update_time < :time ", nativeQuery = true)
-    List<Resource> find0Before(@Param("time")String time);
+    List<Resource> find0Before(@Param("time") String time);
 
     @Modifying
     @Query("update Resource set amount = amount + :increment where md5 in (:md5s)")

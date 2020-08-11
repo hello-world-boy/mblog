@@ -35,7 +35,7 @@ public class SpringUtils implements ApplicationContextAware {
     /**
      * 通过name获取 Bean
      *
-     * @param <T> Bean类型
+     * @param <T>  Bean类型
      * @param name Bean名称
      * @return Bean
      */
@@ -47,7 +47,7 @@ public class SpringUtils implements ApplicationContextAware {
     /**
      * 通过class获取Bean
      *
-     * @param <T> Bean类型
+     * @param <T>   Bean类型
      * @param clazz Bean类
      * @return Bean对象
      */
@@ -58,8 +58,8 @@ public class SpringUtils implements ApplicationContextAware {
     /**
      * 通过name,以及Clazz返回指定的Bean
      *
-     * @param <T> bean类型
-     * @param name Bean名称
+     * @param <T>   bean类型
+     * @param name  Bean名称
      * @param clazz bean类型
      * @return Bean对象
      */

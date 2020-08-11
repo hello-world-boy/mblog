@@ -106,7 +106,7 @@ public class DirectiveHandler {
     public String getContextPath() {
         String ret = null;
         try {
-            ret =  TemplateModelUtils.converString(getEnvModel("base"));
+            ret = TemplateModelUtils.converString(getEnvModel("base"));
         } catch (TemplateModelException e) {
         }
         return ret;
@@ -114,6 +114,7 @@ public class DirectiveHandler {
 
     /**
      * 包装对象
+     *
      * @param object
      * @return
      * @throws TemplateModelException
@@ -124,6 +125,7 @@ public class DirectiveHandler {
 
     /**
      * 获取局部变量
+     *
      * @param name
      * @return
      * @throws TemplateModelException

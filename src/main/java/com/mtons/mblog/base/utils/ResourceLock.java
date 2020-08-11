@@ -1,6 +1,6 @@
 package com.mtons.mblog.base.utils;
 
-import java.util.concurrent.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -29,11 +29,11 @@ public class ResourceLock {
         }
     }
 
-    public static String getPostKey(Long postId){
+    public static String getPostKey(Long postId) {
         return "POST_OPERATE_{postId}".replace("{postId}", String.valueOf(postId));
     }
 
-    public static String getPicKey(Long picId){
+    public static String getPicKey(Long picId) {
         return "PIC_OPERATE_{pic}".replace("{pic}", String.valueOf(picId));
     }
 

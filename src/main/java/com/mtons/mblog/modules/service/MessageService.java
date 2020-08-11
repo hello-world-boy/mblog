@@ -13,12 +13,14 @@ public interface MessageService {
 
     /**
      * 发送通知
+     *
      * @param message
      */
     void send(MessageVO message);
 
     /**
      * 未读消息数量
+     *
      * @param userId
      * @return
      */
@@ -26,12 +28,14 @@ public interface MessageService {
 
     /**
      * 标记为已读
+     *
      * @param userId
      */
     void readed4Me(long userId);
 
     /**
      * 根据文章ID清理消息
+     *
      * @param postId
      * @return
      */

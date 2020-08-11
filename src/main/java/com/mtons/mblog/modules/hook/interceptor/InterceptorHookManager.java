@@ -9,16 +9,20 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @author Beldon 2015/10/30
  */
 @Component
 public class InterceptorHookManager {
-	@Autowired
-	private ApplicationContext applicationContext;
-	
+    @Autowired
+    private ApplicationContext applicationContext;
+
     private Map<String, Set<InterceptorHook>> map = new HashMap<>();
 
     /**

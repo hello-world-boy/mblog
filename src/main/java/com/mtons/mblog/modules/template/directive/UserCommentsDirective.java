@@ -18,12 +18,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserCommentsDirective extends TemplateDirective {
     @Autowired
-	private CommentService commentService;
+    private CommentService commentService;
 
-	@Override
-	public String getName() {
-		return "user_comments";
-	}
+    @Override
+    public String getName() {
+        return "user_comments";
+    }
 
     @Override
     public void execute(DirectiveHandler handler) throws Exception {
