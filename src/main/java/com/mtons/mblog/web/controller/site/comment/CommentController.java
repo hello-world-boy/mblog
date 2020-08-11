@@ -1,6 +1,3 @@
-/**
- *
- */
 package com.mtons.mblog.web.controller.site.comment;
 
 import com.mtons.mblog.base.lang.Consts;

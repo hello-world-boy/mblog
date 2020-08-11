@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.mtons.mblog.web.controller.admin;
 
 import com.mtons.mblog.base.lang.Result;

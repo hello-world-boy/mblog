@@ -1,6 +1,3 @@
-/**
- *
- */
 package com.mtons.mblog.modules.template.directive;
 
 import com.mtons.mblog.modules.data.PostVO;

@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.mtons.mblog.base.utils;
 
 import org.apache.commons.text.RandomStringGenerator;

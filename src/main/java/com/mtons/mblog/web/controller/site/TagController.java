@@ -1,6 +1,3 @@
-/**
- *
- */
 package com.mtons.mblog.web.controller.site;
 
 import com.mtons.mblog.modules.data.PostTagVO;

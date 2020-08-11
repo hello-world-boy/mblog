@@ -1,12 +1,3 @@
-/*
-+--------------------------------------------------------------------------
-|   WeCMS [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package com.mtons.mblog.web.controller.site.posts;
 
 import com.mtons.mblog.base.lang.Consts;
