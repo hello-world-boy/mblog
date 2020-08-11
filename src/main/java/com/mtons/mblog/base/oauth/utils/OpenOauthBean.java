@@ -14,10 +14,15 @@ public class OpenOauthBean {
     private String accessToken;
 
     private String expireIn;
+
     private String refreshToken;
+
     private String username;
+
     private String nickname;
+
     private String email;
+
     private String avatar;
 
     public long getId() {

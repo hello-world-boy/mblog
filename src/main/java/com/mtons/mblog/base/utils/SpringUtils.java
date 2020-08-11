@@ -30,8 +30,6 @@ public class SpringUtils implements ApplicationContextAware {
         return applicationContext;
     }
 
-    //通过name获取 Bean.
-
     /**
      * 通过name获取 Bean
      *

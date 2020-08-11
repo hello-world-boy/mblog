@@ -16,7 +16,9 @@ public class PostUpdateEvent extends ApplicationEvent {
     public final static int ACTION_DELETE = 2;
 
     private long postId;
+
     private long userId;
+
     private int action = ACTION_PUBLISH;
 
     public PostUpdateEvent(Object source) {

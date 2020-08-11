@@ -30,16 +30,27 @@ public class APIConfig {
     private String redirect_renren;
 
     private String openid_osc;
+
     private String openkey_osc;
+
     private String redirect_osc;
+
     private String openid_douban;
+
     private String openkey_douban;
+
     private String redirect_douban;
+
     private String openid_github;
+
     private String openkey_github;
+
     private String redirect_github;
+
     private String lbs_ak_baidu;
+
     private String dp_key;
+
     private String dp_secret;
 
     private APIConfig() {

@@ -10,7 +10,9 @@ import java.util.Map;
 
 public class Oauth {
     private String clientId;
+
     private String clientSecret;
+
     private String redirectUri;
 
     protected String getAuthorizeUrl(String authorize, Map<String, String> params) throws java.io.UnsupportedEncodingException {
