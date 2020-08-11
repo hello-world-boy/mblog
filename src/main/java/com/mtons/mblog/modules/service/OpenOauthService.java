@@ -1,7 +1,7 @@
 package com.mtons.mblog.modules.service;
 
-import com.mtons.mblog.modules.data.UserVO;
 import com.mtons.mblog.modules.data.OpenOauthVO;
+import com.mtons.mblog.modules.data.UserVO;
 
 /**
  * @author langhsu on 2015/8/12.

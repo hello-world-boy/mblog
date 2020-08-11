@@ -1,6 +1,5 @@
 package com.mtons.mblog.base.oauth.utils;
 
-
 public class OpenOauthBean {
     private long id;
 

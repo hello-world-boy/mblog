@@ -8,7 +8,6 @@ import freemarker.template.TemplateException;
 import java.io.IOException;
 import java.util.Map;
 
-
 /**
  * Freemarker tag that renders the tag body only if the current user has <em>not</em> executed a successful authentication
  * attempt <em>during their current session</em>.

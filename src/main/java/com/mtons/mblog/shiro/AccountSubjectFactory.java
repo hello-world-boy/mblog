@@ -29,7 +29,7 @@ public class AccountSubjectFactory extends DefaultSubjectFactory {
         if (!(context instanceof WebSubjectContext)) {
             return super.createSubject(context);
         } else {
-            WebSubjectContext wsc = (WebSubjectContext)context;
+            WebSubjectContext wsc = (WebSubjectContext) context;
             SecurityManager securityManager = wsc.resolveSecurityManager();
             Session session = wsc.resolveSession();
             boolean sessionEnabled = wsc.isSessionCreationEnabled();
@@ -39,7 +39,7 @@ public class AccountSubjectFactory extends DefaultSubjectFactory {
             ServletRequest request = wsc.resolveServletRequest();
             ServletResponse response = wsc.resolveServletResponse();
 
-            Subject subject =  new WebDelegatingSubject(principals, authenticated, host, session, sessionEnabled, request, response, securityManager);
+            Subject subject = new WebDelegatingSubject(principals, authenticated, host, session, sessionEnabled, request, response, securityManager);
             handlerSession(subject);
             return subject;
         }

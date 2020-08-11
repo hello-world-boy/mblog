@@ -3,7 +3,7 @@ package com.mtons.mblog.modules.event;
 import org.springframework.context.ApplicationEvent;
 
 /**
- *   文章发布事件
+ * 文章发布事件
  * //合并文章事件, 下层多个订阅者
  * - 推送Feed给粉丝
  * - 文章发布者文章数统计

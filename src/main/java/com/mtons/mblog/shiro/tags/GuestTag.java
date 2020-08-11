@@ -8,7 +8,6 @@ import freemarker.template.TemplateException;
 import java.io.IOException;
 import java.util.Map;
 
-
 /**
  * JSP tag that renders the tag body if the current user <em>is not</em> known to the system, either because they
  * haven't logged in yet, or because they have no 'RememberMe' identity.

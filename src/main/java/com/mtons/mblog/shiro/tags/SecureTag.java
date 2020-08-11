@@ -1,7 +1,12 @@
 package com.mtons.mblog.shiro.tags;
 
 import freemarker.core.Environment;
-import freemarker.template.*;
+import freemarker.template.SimpleScalar;
+import freemarker.template.TemplateDirectiveBody;
+import freemarker.template.TemplateDirectiveModel;
+import freemarker.template.TemplateException;
+import freemarker.template.TemplateModel;
+import freemarker.template.TemplateModelException;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 
@@ -12,6 +17,7 @@ import java.util.Map;
  * <p>Equivalent to {@link org.apache.shiro.web.tags.SecureTag}</p>
  */
 public abstract class SecureTag implements TemplateDirectiveModel {
+    @Override
     public void execute(Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body) throws TemplateException, IOException {
         verifyParameters(params);
         render(env, params, body);

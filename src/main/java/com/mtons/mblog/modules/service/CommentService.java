@@ -11,7 +11,6 @@ import java.util.Set;
 
 /**
  * @author langhsu
- *
  */
 public interface CommentService {
 	Page<CommentVO> paging4Admin(Pageable pageable);

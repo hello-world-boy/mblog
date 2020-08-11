@@ -1,7 +1,7 @@
 package com.mtons.mblog.modules.template.method;
 
-import freemarker.template.TemplateModelException;
 import com.mtons.mblog.modules.template.BaseMethod;
+import freemarker.template.TemplateModelException;
 
 import java.util.Date;
 import java.util.List;

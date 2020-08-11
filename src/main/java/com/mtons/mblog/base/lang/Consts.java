@@ -1,6 +1,5 @@
 package com.mtons.mblog.base.lang;
 
-
 /**
  * @author langhsu
  *

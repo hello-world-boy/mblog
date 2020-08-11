@@ -1,15 +1,20 @@
 package com.mtons.mblog.modules.service.impl;
 
-import com.mtons.mblog.modules.repository.UserRoleRepository;
 import com.mtons.mblog.modules.entity.Role;
 import com.mtons.mblog.modules.entity.UserRole;
+import com.mtons.mblog.modules.repository.UserRoleRepository;
 import com.mtons.mblog.modules.service.RoleService;
 import com.mtons.mblog.modules.service.UserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @author - langhsu on 2018/2/11

@@ -1,14 +1,14 @@
 package com.mtons.mblog.modules.service.impl;
 
-import com.mtons.mblog.modules.data.OpenOauthVO;
-import com.mtons.mblog.modules.data.UserVO;
-import com.mtons.mblog.modules.entity.UserOauth;
-import com.mtons.mblog.modules.entity.User;
-import com.mtons.mblog.modules.repository.UserRepository;
-import com.mtons.mblog.modules.service.OpenOauthService;
 import com.mtons.mblog.base.utils.BeanMapUtils;
 import com.mtons.mblog.base.utils.MD5;
+import com.mtons.mblog.modules.data.OpenOauthVO;
+import com.mtons.mblog.modules.data.UserVO;
+import com.mtons.mblog.modules.entity.User;
+import com.mtons.mblog.modules.entity.UserOauth;
 import com.mtons.mblog.modules.repository.UserOauthRepository;
+import com.mtons.mblog.modules.repository.UserRepository;
+import com.mtons.mblog.modules.service.OpenOauthService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * 登录
+ *
  * @author langhsu
  */
 @Controller
@@ -19,26 +20,28 @@ public class LoginController extends BaseController {
 
     /**
      * 跳转登录页
+     *
      * @return
      */
-	@GetMapping(value = "/login")
-	public String view() {
-		return view(Views.LOGIN);
-	}
+    @GetMapping(value = "/login")
+    public String view() {
+        return view(Views.LOGIN);
+    }
 
     /**
      * 提交登录
+     *
      * @param username
      * @param password
      * @param model
      * @return
      */
-	@PostMapping(value = "/login")
-	public String login(String username,
+    @PostMapping(value = "/login")
+    public String login(String username,
                         String password,
-                        @RequestParam(value = "rememberMe",defaultValue = "0") Boolean rememberMe,
+                        @RequestParam(value = "rememberMe", defaultValue = "0") Boolean rememberMe,
                         ModelMap model) {
-		String view = view(Views.LOGIN);
+        String view = view(Views.LOGIN);
 
         Result<AccountProfile> result = executeLogin(username, password, rememberMe);
 
@@ -48,6 +51,6 @@ public class LoginController extends BaseController {
             model.put("message", result.getMessage());
         }
         return view;
-	}
+    }
 
 }

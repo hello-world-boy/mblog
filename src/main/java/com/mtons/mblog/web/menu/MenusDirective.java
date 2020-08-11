@@ -1,7 +1,7 @@
 package com.mtons.mblog.web.menu;
 
-import com.mtons.mblog.modules.template.DirectiveHandler;
 import com.mtons.mblog.modules.entity.Role;
+import com.mtons.mblog.modules.template.DirectiveHandler;
 import com.mtons.mblog.modules.template.TemplateDirective;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
@@ -51,8 +51,8 @@ public class MenusDirective extends TemplateDirective {
         if (StringUtils.isBlank(menu.getPermission())) {
             authorized = true;
         } else {
-            for(String perm : menu.getPermission().split(",")){
-                if(subject.isPermitted(perm)){
+            for (String perm : menu.getPermission().split(",")) {
+                if (subject.isPermitted(perm)) {
                     authorized = true;
                     break;
                 }

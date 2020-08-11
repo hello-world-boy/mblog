@@ -6,6 +6,7 @@ package com.mtons.mblog.shiro.tags;
  * @since 0.1
  */
 public class HasPermissionTag extends PermissionTag {
+    @Override
     protected boolean showTagBody(String p) {
         return isPermitted(p);
     }

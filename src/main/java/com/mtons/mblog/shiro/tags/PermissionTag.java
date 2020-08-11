@@ -39,6 +39,7 @@ public abstract class PermissionTag extends SecureTag {
     /**
      * 判断是否拥有指定权限
      * - 超级管理员例外, 拥有所有
+     *
      * @param p 权限代码
      * @return true/false
      */

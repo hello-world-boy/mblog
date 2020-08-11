@@ -13,27 +13,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * 文章搜索
- * @author langhsu
  *
+ * @author langhsu
  */
 @Controller
 public class SearchController extends BaseController {
-	@Autowired
-	private PostSearchService postSearchService;
+    @Autowired
+    private PostSearchService postSearchService;
 
-	@RequestMapping("/search")
-	public String search(String kw, ModelMap model) {
-		Pageable pageable = wrapPageable();
-		try {
-			if (StringUtils.isNotEmpty(kw)) {
-				Page<PostVO> page = postSearchService.search(pageable, kw);
-				model.put("results", page);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		model.put("kw", kw);
-		return view(Views.SEARCH);
-	}
-	
+    @RequestMapping("/search")
+    public String search(String kw, ModelMap model) {
+        Pageable pageable = wrapPageable();
+        try {
+            if (StringUtils.isNotEmpty(kw)) {
+                Page<PostVO> page = postSearchService.search(pageable, kw);
+                model.put("results", page);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        model.put("kw", kw);
+        return view(Views.SEARCH);
+    }
+
 }

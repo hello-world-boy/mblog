@@ -2,7 +2,6 @@ package com.mtons.mblog.shiro.tags;
 
 import org.apache.shiro.subject.Subject;
 
-
 /**
  * Displays body content if the current user has any of the roles specified.
  * <p>Equivalent to {@link org.apache.shiro.web.tags.HasAnyRolesTag}</p>
@@ -13,6 +12,7 @@ public class HasAnyRolesTag extends RoleTag {
     // Delimeter that separates role names in tag attribute
     private static final String ROLE_NAMES_DELIMETER = ",";
 
+    @Override
     protected boolean showBody(String roleNames) {
         boolean hasAnyRole = false;
         Subject subject = getSubject();

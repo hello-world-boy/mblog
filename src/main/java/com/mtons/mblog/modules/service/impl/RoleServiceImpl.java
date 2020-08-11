@@ -7,8 +7,8 @@ import com.mtons.mblog.modules.entity.UserRole;
 import com.mtons.mblog.modules.repository.PermissionRepository;
 import com.mtons.mblog.modules.repository.RoleRepository;
 import com.mtons.mblog.modules.repository.UserRoleRepository;
-import com.mtons.mblog.modules.service.RoleService;
 import com.mtons.mblog.modules.service.RolePermissionService;
+import com.mtons.mblog.modules.service.RoleService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -18,7 +18,12 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import javax.persistence.criteria.Predicate;
-import java.util.*;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
 
 /**
  * @author - langhsu on 2018/2/11

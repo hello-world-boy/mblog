@@ -1,6 +1,5 @@
 package com.mtons.mblog.modules.service.impl;
 
-import com.mtons.mblog.modules.entity.Channel;
 import com.mtons.mblog.modules.entity.Links;
 import com.mtons.mblog.modules.repository.LinksRepository;
 import com.mtons.mblog.modules.service.LinksService;

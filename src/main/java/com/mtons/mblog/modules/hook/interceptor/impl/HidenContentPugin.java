@@ -1,6 +1,5 @@
 package com.mtons.mblog.modules.hook.interceptor.impl;
 
-import com.mtons.mblog.base.utils.PreviewTextUtils;
 import com.mtons.mblog.modules.data.AccountProfile;
 import com.mtons.mblog.modules.data.PostVO;
 import com.mtons.mblog.modules.hook.interceptor.InterceptorHookSupport;

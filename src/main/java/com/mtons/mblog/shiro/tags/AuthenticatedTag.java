@@ -8,7 +8,6 @@ import freemarker.template.TemplateException;
 import java.io.IOException;
 import java.util.Map;
 
-
 /**
  * JSP tag that renders the tag body only if the current user has executed a <b>successful</b> authentication attempt
  * <em>during their current session</em>.

@@ -1,9 +1,9 @@
 package com.mtons.mblog.modules.service.impl;
 
-import com.mtons.mblog.modules.repository.PermissionRepository;
-import com.mtons.mblog.modules.repository.RolePermissionRepository;
 import com.mtons.mblog.modules.entity.Permission;
 import com.mtons.mblog.modules.entity.RolePermission;
+import com.mtons.mblog.modules.repository.PermissionRepository;
+import com.mtons.mblog.modules.repository.RolePermissionRepository;
 import com.mtons.mblog.modules.service.RolePermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

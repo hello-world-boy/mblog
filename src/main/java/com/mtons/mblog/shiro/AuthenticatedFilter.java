@@ -1,14 +1,5 @@
 package com.mtons.mblog.shiro;
 
-import java.io.IOException;
-import java.util.Formatter;
-
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
-
 import com.alibaba.fastjson.JSON;
 import com.mtons.mblog.base.lang.Result;
 import org.apache.commons.lang3.StringUtils;
@@ -16,6 +7,14 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.servlet.OncePerRequestFilter;
 import org.apache.shiro.web.util.WebUtils;
+
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.util.Formatter;
 
 /**
  * @version 1.0.0
@@ -43,7 +42,7 @@ public class AuthenticatedFilter extends OncePerRequestFilter {
                 response.setContentType("application/json;charset=UTF-8");
                 response.getWriter().print(JSON.toJSONString(Result.failure("您还没有登录!")));
             } else {
-		response.setContentType("text/html;charset=UTF-8");
+                response.setContentType("text/html;charset=UTF-8");
                 response.getWriter().write(new Formatter().format(JS, url).toString());
             }
         }
@@ -52,17 +51,17 @@ public class AuthenticatedFilter extends OncePerRequestFilter {
     public void setLoginUrl(String loginUrl) {
         this.loginUrl = loginUrl;
     }
-    
-	/**
-	 * 判断是否为Ajax请求 <功能详细描述>
-	 * 
-	 * @param request
-	 * @return 是true, 否false
-	 * @see [类、类#方法、类#成员]
-	 */
-	public static boolean isAjaxRequest(HttpServletRequest request) {
-		String header = request.getHeader("X-Requested-With");
+
+    /**
+     * 判断是否为Ajax请求 <功能详细描述>
+     *
+     * @param request
+     * @return 是true, 否false
+     * @see [类、类#方法、类#成员]
+     */
+    public static boolean isAjaxRequest(HttpServletRequest request) {
+        String header = request.getHeader("X-Requested-With");
         return "XMLHttpRequest".equals(header);
-	}
+    }
 
 }

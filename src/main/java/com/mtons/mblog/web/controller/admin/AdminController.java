@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author langhsu
- *
  */
 @Controller
 public class AdminController {
@@ -26,21 +25,21 @@ public class AdminController {
     @Autowired
     private UserService userService;
 
-	@RequestMapping("/admin")
-	public String index(HttpServletRequest request, ModelMap model) {
-		pushSystemStatus(request, model);
-		model.put("channelCount", channelService.count());
+    @RequestMapping("/admin")
+    public String index(HttpServletRequest request, ModelMap model) {
+        pushSystemStatus(request, model);
+        model.put("channelCount", channelService.count());
         model.put("postCount", postService.count());
         model.put("commentCount", commentService.count());
         model.put("userCount", userService.count());
-		return "/admin/index";
-	}
-	
-	private void pushSystemStatus(HttpServletRequest request, ModelMap model) {
+        return "/admin/index";
+    }
+
+    private void pushSystemStatus(HttpServletRequest request, ModelMap model) {
         float freeMemory = (float) Runtime.getRuntime().freeMemory();
         float totalMemory = (float) Runtime.getRuntime().totalMemory();
         float usedMemory = (totalMemory - freeMemory);
-        float memPercent = Math.round(freeMemory / totalMemory * 100) ;
+        float memPercent = Math.round(freeMemory / totalMemory * 100);
         String os = System.getProperty("os.name");
         String javaVersion = System.getProperty("java.version");
 
@@ -50,5 +49,5 @@ public class AdminController {
         model.addAttribute("memPercent", memPercent);
         model.addAttribute("os", os);
         model.addAttribute("javaVersion", javaVersion);
-	}
+    }
 }
